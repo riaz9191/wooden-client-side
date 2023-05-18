@@ -1,17 +1,19 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-// import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
+
+import { toast } from "react-toastify";
 
 const SignUp = () => {
-  const { registerNewUser,updateProfileData } = useContext(AuthContext);
+  const { registerNewUser, updateProfileData } = useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
 
-//   const navigate = useNavigate();
+  //   const navigate = useNavigate();
   const [err, setErr] = useState("");
   const [success, setSuccess] = useState("");
   const handleRegister = (event) => {
@@ -29,15 +31,36 @@ const SignUp = () => {
       setErr("");
     }
     if ((name, email, password)) {
-        registerNewUser(email, password)
+      registerNewUser(email, password)
         .then((res) => {
           // Signed in
           const user = res.user;
           console.log(user);
-          updateProfileData(name,photo)
+          updateProfileData(name, photo);
 
           form.reset();
-          setSuccess("Successfully Created Profile");
+          let timerInterval;
+          Swal.fire({
+            title: "Confirmation!",
+            html: "Successfully Created Profile",
+            timer: 4000,
+            timerProgressBar: true,
+            didOpen: () => {
+              Swal.showLoading();
+              const b = Swal.getHtmlContainer().querySelector("b");
+              timerInterval = setInterval(() => {
+                b.textContent = Swal.getTimerLeft();
+              }, 5000);
+            },
+            willClose: () => {
+              clearInterval(timerInterval);
+            },
+          }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+              console.log("I was closed by the timer");
+            }
+          });
 
           navigate(from);
           // ...
