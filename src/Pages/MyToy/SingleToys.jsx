@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaUndoAlt,FaTrash } from 'react-icons/fa';
+import { FaUndoAlt, FaTrash } from "react-icons/fa";
 import { RxReader } from "react-icons/rx";
 
-
-const SingleToys = ({ toy,index }) => {
+const SingleToys = ({ toy, index,handleDelete }) => {
+ 
   const {
     _id,
     pictureURL,
@@ -16,14 +16,11 @@ const SingleToys = ({ toy,index }) => {
     rating,
     quantity,
     description,
-    
   } = toy;
 
   return (
     <tr>
-      <td>
-        {index+1}
-      </td>
+      <td>{index + 1}</td>
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
@@ -31,7 +28,6 @@ const SingleToys = ({ toy,index }) => {
               <img src={pictureURL} alt="Toy Image" />
             </div>
           </div>
-          
         </div>
       </td>
       <td>{name ? name : "N/A"}</td>
@@ -42,9 +38,27 @@ const SingleToys = ({ toy,index }) => {
       <td>{rating}</td>
       <td>{quantity}</td>
       <td>
-       <Link to={`/toyinfo/${_id}`}> <button className="btn btn-primary btn-xs"><RxReader/></button></Link>
-       <Link to={`/toyinfo/${_id}`}> <button className="btn btn-primary btn-xs"><FaUndoAlt /></button></Link>
-       <Link to={ `/toyinfo/${_id}`}> <button className="btn btn-primary btn-xs"><FaTrash/></button></Link>
+        <Link to={`/toyinfo/${_id}`}>
+          {" "}
+          <button className="btn btn-primary btn-xs">
+            <RxReader />
+          </button>
+        </Link>
+        <Link to={`/toyinfo/${_id}`}>
+          {" "}
+          <button className="btn btn-primary btn-xs">
+            <FaUndoAlt />
+          </button>
+        </Link>
+        <>
+          {" "}
+          <button
+            onClick={() => handleDelete(_id)}
+            className="btn btn-primary btn-xs"
+          >
+            <FaTrash />
+          </button>
+        </>
       </td>
     </tr>
   );
