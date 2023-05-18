@@ -37,7 +37,7 @@ const SignUp = () => {
           updateProfileData(name,photo)
 
           form.reset();
-          setSuccess("Successfully Created Profile ");
+          setSuccess("Successfully Created Profile");
 
           navigate(from);
           // ...
