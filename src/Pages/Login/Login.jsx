@@ -28,7 +28,7 @@ const Login = () => {
       <div className="mx-auto h-full sm:w-max  mb-8">
         <div className="m-auto shadow-xl">
           <div className="mt-12 rounded-3xl border bg-white -mx-6 sm:-mx-10 p-8 sm:p-10">
-            <h3 className="text-2xl font-semibold text-gray-700">Login to your account</h3>
+            <h3 className="text-2xl font-semibold text-gray-700">Loginz to your account</h3>
             <div className="mt-12 flex flex-wrap sm:grid gap-6 grid-cols-2">
               <button className="w-full h-11 rounded-full border border-gray-300 bg-white px-6 transition hover:bg-gray-50">
                 <div className="w-max mx-auto flex items-center justify-center space-x-4">
