@@ -43,14 +43,14 @@ const SignUp = () => {
           Swal.fire({
             title: "Confirmation!",
             html: "Successfully Created Profile",
-            timer: 4000,
+            timer: 3000,
             timerProgressBar: true,
             didOpen: () => {
               Swal.showLoading();
               const b = Swal.getHtmlContainer().querySelector("b");
               timerInterval = setInterval(() => {
                 b.textContent = Swal.getTimerLeft();
-              }, 5000);
+              }, 4000);
             },
             willClose: () => {
               clearInterval(timerInterval);
