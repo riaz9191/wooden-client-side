@@ -8,8 +8,8 @@ const Main = () => {
     return (
         <div className='max-w-7xl mx-auto'>
             <Navbar></Navbar>
-            <ToastContainer />
             <Outlet></Outlet>
+            <ToastContainer />
             <Footer></Footer>
         </div>
     );

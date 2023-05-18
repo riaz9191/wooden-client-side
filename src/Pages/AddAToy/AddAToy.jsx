@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import { toast } from "react-toastify";
 
 const AddAToy = () => {
   const [pictureURL, setPictureURL] = useState("");
@@ -14,6 +15,7 @@ const AddAToy = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
     const postToys = {
       pictureURL,
       name,
@@ -34,6 +36,29 @@ const AddAToy = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+
+        toast.success(`${name} added to your Toy List!`, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+        // Reset form fields
+        setPictureURL("");
+        setName("");
+        setSellerName("");
+        setSellerEmail("");
+        setSubCategory("");
+        setPrice("");
+        setRating("");
+        setQuantity("");
+        setDescription("");
+
+        form.reset();
       });
   };
 

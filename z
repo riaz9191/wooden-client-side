@@ -1,0 +1,49 @@
+import React from "react";
+
+const SingleToys = ({ toy }) => {
+  const {
+    pictureURL,
+    name,
+    sellerName,
+    sellerEmail,
+    subCategory,
+    price,
+    rating,
+    quantity,
+    description,
+  } = toy;
+
+  return (
+    <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="relative">
+        <img className="w-full h-56 object-cover" src={pictureURL} alt={name} />
+        <div className="absolute top-2 right-2 bg-white text-gray-600 py-1 px-2 rounded-full shadow">
+          ${price}
+        </div>
+      </div>
+      <div className="p-4">
+        <h2 className="text-2xl font-bold text-gray-800 mb-2">{name}</h2>
+        <p className="text-gray-600 mb-2">
+          <span className="font-semibold">Seller:</span> {sellerName} ({sellerEmail})
+        </p>
+        <p className="text-gray-600 mb-2">
+          <span className="font-semibold">Sub-category:</span> {subCategory}
+        </p>
+        <p className="text-gray-600 mb-2">
+          <span className="font-semibold">Rating:</span> {rating}/5
+        </p>
+        <p className="text-gray-700 mb-4">{description}</p>
+        <div className="flex items-center justify-between">
+          <p className="text-gray-600">
+            <span className="font-semibold">Available Quantity:</span> {quantity}
+          </p>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SingleToys;

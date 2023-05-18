@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
-import { toast } from "react-toastify";
+
 
 const SignUp = () => {
   const { registerNewUser, updateProfileData } = useContext(AuthContext);
