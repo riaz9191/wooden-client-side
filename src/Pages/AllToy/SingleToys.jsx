@@ -38,7 +38,6 @@ const SingleToys = ({ toy,index }) => {
       <td>{price}</td>
       <td>{rating}</td>
       <td>{quantity}</td>
-      <td>{description}</td>
       <td>
        <Link to={`/toyinfo/${_id}`}> <button className="btn btn-primary btn-xs">View Details</button></Link>
       </td>
