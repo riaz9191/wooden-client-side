@@ -8,7 +8,7 @@ const AddAToy = () => {
   const [pictureURL, setPictureURL] = useState("");
   const [name, setName] = useState("");
   const [sellerName, setSellerName] = useState("");
-  const [sellerEmail, setSellerEmail] = useState("");
+  const sellerEmail = user?.email || "";
   const [subCategory, setSubCategory] = useState("");
   const [price, setPrice] = useState("");
   const [rating, setRating] = useState("");
@@ -53,7 +53,6 @@ const AddAToy = () => {
         setPictureURL("");
         setName("");
         setSellerName("");
-        setSellerEmail("");
         setSubCategory("");
         setPrice("");
         setRating("");
@@ -128,8 +127,7 @@ const AddAToy = () => {
           <input
             type="email"
             id="sellerEmail"
-            value={user?.email}
-            onChange={(e) => setSellerEmail(e.target.value)}
+            value={sellerEmail}
             className="bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md py-2 px-4 w-full"
             required
           />
