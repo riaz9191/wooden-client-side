@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaUndoAlt, FaTrash } from "react-icons/fa";
 import { RxReader } from "react-icons/rx";
 
+
 const SingleToys = ({ toy, index,handleDelete }) => {
+
  
   const {
     _id,
@@ -17,6 +19,7 @@ const SingleToys = ({ toy, index,handleDelete }) => {
     quantity,
     description,
   } = toy;
+  
 
   return (
     <tr>

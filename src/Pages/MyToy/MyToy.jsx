@@ -3,16 +3,22 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import SingleToys from "./SingleToys";
 import Swal from "sweetalert2";
 import useTitle from "../../hook/useTitle";
+import Spinner from "../../Spinner/Spinner";
 
 const MyToy = () => {
-  const { user } = useContext(AuthContext);
+
+  
+  
+  const { user,loading } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [sort, setSort] = useState("asc");
   useTitle('MyToy')
+  
 
   useEffect(() => {
     console.log("Sort value: ", sort); // Check the sort state
   }, [sort]);
+  
 
   const url = `http://localhost:5000/alltoys?sellerEmail=${user?.email}&sort=${sort}&${new Date().getTime()}`;
 
@@ -25,6 +31,11 @@ const MyToy = () => {
         setToys([...data]); // This will create a new array reference
       });
   }, [sort]);
+  if (loading) {
+    return (
+      <Spinner className="text-center" animation="border" variant="primary" />
+    );
+  }
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -52,6 +63,7 @@ const MyToy = () => {
       }
     });
   };
+  
 
   return (
     <div className="mt-5 mb-32">

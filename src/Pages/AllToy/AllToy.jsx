@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SingleToys from "./SingleToys";
 import { toast } from "react-toastify";
 import useTitle from "../../hook/useTitle";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Spinner from "../../Spinner/Spinner";
 
 const AllToy = () => {
+  const{loading} = useContext(AuthContext)
   const [toys, setToys] = useState([]);
   const [searchText, setSearchText] = useState("");
   useTitle('AllToy')
@@ -37,6 +40,11 @@ const AllToy = () => {
         }
       });
   };
+  if (loading) {
+    return (
+      <Spinner className="text-center" animation="border" variant="primary" />
+    );
+  }
 
   return (
     <div>

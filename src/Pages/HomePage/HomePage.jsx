@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Banner from "./Banner/Banner";
 import FreeShipping from "./FreeShipping";
 import Gallery from "./Gallery/Gallery";
@@ -7,8 +7,10 @@ import ShopNow from "./ShopNow/ShopNow";
 import UserFeedback from "./UserFeedback/UserFeedback";
 import useTitle from "../../hook/useTitle";
 
+
 const HomePage = () => {
   useTitle('Home')
+  
   return (
     <div>
       <Banner></Banner>

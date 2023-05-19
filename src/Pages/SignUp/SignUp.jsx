@@ -139,7 +139,7 @@ const SignUp = () => {
                 <small className="ps-1"> {success}</small>
               </p>
               <div className="form-control mt-6">
-                <button className="btn bg-orange-600 border-0">Register</button>
+                <button className="btn bg-orange-500 border-0">Register</button>
               </div>
               <p>
                 Already Have account?{" "}

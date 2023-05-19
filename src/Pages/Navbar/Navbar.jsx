@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import logo from "../../assets/images/logo/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Spinner from "../../Spinner/Spinner";
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+ 
+  const { user, logOut,loading } = useContext(AuthContext);
   //   console.log(user.photoURL);
   const handleLogOut = () => {
     logOut()
@@ -13,22 +15,15 @@ const Navbar = () => {
         console.log(err);
       });
   };
+  if (loading) {
+    return (
+      <Spinner className="text-center" animation="border" variant="primary" />
+    );
+  }
 
   const navItems = (
     <>
-      {/* <NavLink
-        to="/"
-        className={({ isActive }) => (isActive ? "active" : "default")}
-      >
-        Home
-      </NavLink>
-
-      <NavLink
-        to="/applied"
-        className={({ isActive }) => (isActive ? "active" : "default")}
-      >
-        Error
-      </NavLink> */}
+    
       <NavLink
         to="/"
         className={ ({ isActive }) => (isActive ? "active" : "default ") }
@@ -88,14 +83,14 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-orange-600 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-green-600 rounded-box w-52"
             >
               {navItems}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">
+         <Link to='/'> <a className="btn btn-ghost normal-case text-xl">
             <img src={logo} alt="" />
-          </a>
+          </a></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navItems}</ul>
@@ -111,13 +106,13 @@ const Navbar = () => {
           )}
           {user?.email ? (
             <Link to="/">
-              <a onClick={handleLogOut} className="btn bg-orange-600 rounded-md">
+              <a onClick={handleLogOut} className="btn bg-orange-400 rounded-md">
                 Logout
               </a>
             </Link>
           ) : (
             <Link to="/login">
-              <a className="btn bg-orange-600 rounded-md">Login</a>
+              <a className="btn bg-orange-400 rounded-md">Login</a>
             </Link>
           )}
         </div>
