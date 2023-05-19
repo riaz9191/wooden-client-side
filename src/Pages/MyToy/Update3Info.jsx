@@ -75,7 +75,7 @@ const Update3Info = () => {
 //   console.log(toys);
   return (
     <div className="bg-base-300">
-      <h2 className="text-center text-3xl font-bold p-5">Add a Toy</h2>
+      <h2 className="text-center text-3xl font-bold p-5">Update a Toy</h2>
       <form
         onSubmit={handleSubmit}
         className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6 bg-white p-8 rounded shadow-md"
@@ -90,7 +90,8 @@ const Update3Info = () => {
           <input
             type="text"
             id="pictureURL"
-            defaultValue={toy.pictureURL}
+            value={toy.pictureURL}
+            disabled
             name="pictureURL"
             className="bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md py-2 px-4 w-full"
             required
@@ -108,9 +109,10 @@ const Update3Info = () => {
             type="text"
             id="name"
             name="name"
-            defaultValue={toy.name}
+            value={toy.name}
             className="bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md py-2 px-4 w-full"
             required
+            disabled
           />
         </div>
 
@@ -125,7 +127,8 @@ const Update3Info = () => {
             type="text"
             id="sellerName"
             name="sellerName"
-            defaultValue={toy.sellerName}
+            disabled
+            value={toy.sellerName}
             className="bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md py-2 px-4 w-full"
           />
         </div>
@@ -142,6 +145,7 @@ const Update3Info = () => {
             id="sellerEmail"
             name="sellerEmail"
             value={toy.sellerEmail}
+            disabled
             className="bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md py-2 px-4 w-full"
             required
           />
@@ -156,8 +160,10 @@ const Update3Info = () => {
           </label>
           <select
             id="subCategory"
-            defaultValue={toy.subCategory}
+            value={toy.subCategory}
             name="subCategory"
+
+            disabled
             className="bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md py-2 px-4 w-full"
             required
           >
@@ -206,7 +212,8 @@ const Update3Info = () => {
           <input
             type="number"
             id="rating"
-            defaultValue={toy.rating}
+            value={toy.rating}
+            disabled
             name="rating"
             step="0.1"
             min="0"

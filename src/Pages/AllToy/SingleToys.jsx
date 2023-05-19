@@ -33,10 +33,8 @@ const SingleToys = ({ toy,index }) => {
       </td>
       <td>{name ? name : "N/A"}</td>
       <td>{sellerName ? sellerName : "N/A"}</td>
-      <td>{sellerEmail}</td>
       <td>{subCategory}</td>
-      <td>{price}</td>
-      <td>{rating}</td>
+      <td>${price}</td>
       <td>{quantity}</td>
       <td>
        <Link to={`/toyinfo/${_id}`}> <button className="btn btn-primary btn-xs">View Details</button></Link>

@@ -4,7 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { loginNewUser } = useContext(AuthContext);
+  const { loginNewUser,googleLogin } = useContext(AuthContext);
   const [errorMessage, setErrorMessage] = useState(null);
 
   const navigate = useNavigate();
@@ -54,16 +54,27 @@ const Login = () => {
         setErrorMessage(error.message);
       });
   };
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div className="m-auto xl:container px-12 sm:px-0 mx-auto border-2 bg-base-200">
       <div className="mx-auto h-full sm:w-max  mb-8">
         <div className="m-auto shadow-xl">
           <div className="mt-12 rounded-3xl border bg-white -mx-6 sm:-mx-10 p-8 sm:p-10">
-            <h3 className="text-2xl font-semibold text-gray-700">
-              Loginz to your account
+            <h3 className="text-2xl font-semibold text-center text-gray-700">
+              Login to your account
             </h3>
             <div className="mt-12 flex flex-wrap sm:grid gap-6 grid-cols-2">
-              <button className="w-full h-11 rounded-full border border-gray-300 bg-white px-6 transition hover:bg-gray-50">
+              <button onClick={handleGoogleLogin} className="w-full h-11 rounded-full border border-gray-300 bg-white px-6 transition hover:bg-gray-50">
                 <div className="w-max mx-auto flex items-center justify-center space-x-4">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2008px-Google_%22G%22_Logo.svg.png"

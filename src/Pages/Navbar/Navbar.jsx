@@ -82,7 +82,7 @@ const Navbar = () => {
           {user?.email && (
             <img
               src={user?.photoURL}
-              className="w-12"
+              className="w-12 rounded-lg mr-1 "
               alt=""
               title={user?.displayName}
             />

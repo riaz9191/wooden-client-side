@@ -4,10 +4,10 @@ import "react-tabs/style/react-tabs.css";
 
 const ShopByCategory = () => {
   return (
-    <div>
+    <div className="max-w-6xl mx-auto">
       <Tabs>
         <TabList>
-          <Tab>Category 1</Tab>
+          <Tab>Category </Tab>
           <Tab>Category 2</Tab>
           <Tab>Category 3</Tab>
         </TabList>

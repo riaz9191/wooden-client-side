@@ -10,6 +10,7 @@ import Blog from "../../Pages/Blog/Blog";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import ToyInifo from "../../Pages/AllToy/ToyInifo";
 import Update3Info from "../../Pages/MyToy/Update3Info";
+import Error404 from "../../Pages/Error404/Error404";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Error404 />,
   },
 ]);
 

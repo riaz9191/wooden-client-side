@@ -7,7 +7,7 @@ const AddAToy = () => {
   const { user } = useContext(AuthContext);
   const [pictureURL, setPictureURL] = useState("");
   const [name, setName] = useState("");
-  const [sellerName, setSellerName] = useState("");
+  const sellerName = user?.displayName || "";
   const sellerEmail = user?.email || "";
   const [subCategory, setSubCategory] = useState("");
   const [price, setPrice] = useState("");
@@ -64,10 +64,10 @@ const AddAToy = () => {
   };
 
   return (
-    <div className="bg-base-300">
+    <div className="bg-base-300 pb-10">
       <h2 className="text-center text-3xl font-bold p-5">Add a Toy</h2>
       <form onSubmit={handleSubmit} className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6 bg-white p-8 rounded shadow-md">
-        <div className="mb-8">
+        <div className="mb-8 ">
           <label
             htmlFor="pictureURL"
             className="text-gray-700 font-semibold mb-2 block"
@@ -111,7 +111,7 @@ const AddAToy = () => {
           <input
             type="text"
             id="sellerName"
-            value={sellerName}
+            value={user.displayName}
             onChange={(e) => setSellerName(e.target.value)}
             className="bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md py-2 px-4 w-full"
           />
