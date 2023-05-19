@@ -44,7 +44,7 @@ const SingleToys = ({ toy, index,handleDelete }) => {
             <RxReader />
           </button>
         </Link>
-        <Link to={`/toyinfo/${_id}`}>
+        <Link to={`/updateinfo/${_id}`}>
           {" "}
           <button className="btn btn-primary btn-xs">
             <FaUndoAlt />
