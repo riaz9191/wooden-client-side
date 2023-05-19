@@ -6,6 +6,7 @@ import Spinner from '../../Spinner/Spinner';
 const PrivateRoutes = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
+    console.log('private routes')
     if (loading) {
         return (
           <Spinner className="text-center" animation="border" variant="primary" />
@@ -14,7 +15,7 @@ const PrivateRoutes = ({ children }) => {
       if (user) {
         return children;
       }
-    return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
+    return <Navigate to="/login" state={{ from: location.pathname }} replace></Navigate>;
 };
 
 export default PrivateRoutes;

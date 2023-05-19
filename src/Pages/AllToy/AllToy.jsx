@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import SingleToys from "./SingleToys";
+import { toast } from "react-toastify";
+import useTitle from "../../hook/useTitle";
 
 const AllToy = () => {
   const [toys, setToys] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  useTitle('AllToy')
 
   useEffect(() => {
     fetch("http://localhost:5000/allToys")
@@ -12,6 +16,28 @@ const AllToy = () => {
       });
   }, []);
 
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/searchtoy/${searchText}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.length > 0) {
+          setToys(data);
+          setSearchText("")
+        } else {
+          toast.error(`No Data Found`, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        }
+      });
+  };
+
   return (
     <div>
       {toys.length > 0 ? (
@@ -19,6 +45,17 @@ const AllToy = () => {
           <h2 className="text-center text-4xl mt-4 mb-4 font-bold">
             Total Toys: {toys.length}
           </h2>
+          <div className="flex justify-end max-w-6xl">
+            <input
+              type="text"
+              onChange={(e) => setSearchText(e.target.value)}
+              placeholder="Type here"
+              className="input input-bordered input-success w-full max-w-xs"
+            />
+            <button onClick={handleSearch} className="btn">
+              Search
+            </button>
+          </div>
           <div className="overflow-x-auto w-full max-w-6xl mx-auto">
             <table className="table w-full">
               <thead>
@@ -34,9 +71,17 @@ const AllToy = () => {
                 </tr>
               </thead>
               <tbody>
-                {toys.map((toy, index) => (
-                  <SingleToys key={toy._id} toy={toy} index={index} />
-                ))}
+                {toys.length > 0 ? (
+                  toys.map((toy, index) => (
+                    <SingleToys key={toy._id} toy={toy} index={index} />
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="8" className="text-center">
+                      No data found.
+                    </td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>

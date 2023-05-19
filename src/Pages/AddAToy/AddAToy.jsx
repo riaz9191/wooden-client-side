@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import Select from "react-select";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useTitle from "../../hook/useTitle";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
@@ -14,6 +15,7 @@ const AddAToy = () => {
   const [rating, setRating] = useState("");
   const [quantity, setQuantity] = useState("");
   const [description, setDescription] = useState("");
+  useTitle('AddAToy')
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,7 +54,6 @@ const AddAToy = () => {
         // Reset form fields
         setPictureURL("");
         setName("");
-        setSellerName("");
         setSubCategory("");
         setPrice("");
         setRating("");
@@ -112,7 +113,6 @@ const AddAToy = () => {
             type="text"
             id="sellerName"
             value={user.displayName}
-            onChange={(e) => setSellerName(e.target.value)}
             className="bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md py-2 px-4 w-full"
           />
         </div>

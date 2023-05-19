@@ -1,9 +1,11 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
+import useTitle from "../../hook/useTitle";
 
 const ToyInfo = () => {
   const toys = useLoaderData();
+  useTitle('ToyInfo')
 
   const renderRating = () => {
     const rating = Math.floor(toys.rating);
@@ -40,7 +42,7 @@ const ToyInfo = () => {
                   </div>
                   <p className="text-xl">Seller: {toys.sellerName}</p>
                   <p className="text-lg">
-                    <small>Seller Email: {toys.sellerEmail}</small>z
+                    <small>Seller Email: {toys.sellerEmail}</small>
                   </p>
                   
                 </div>

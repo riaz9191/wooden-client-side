@@ -5,8 +5,10 @@ import Gallery from "./Gallery/Gallery";
 import ShopByCategory from "./ShopByCategory/ShopByCategory";
 import ShopNow from "./ShopNow/ShopNow";
 import UserFeedback from "./UserFeedback/UserFeedback";
+import useTitle from "../../hook/useTitle";
 
 const HomePage = () => {
+  useTitle('Home')
   return (
     <div>
       <Banner></Banner>

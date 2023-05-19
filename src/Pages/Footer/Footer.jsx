@@ -5,19 +5,18 @@ import {
   FaTwitter,
   FaPinterest,
 } from "react-icons/fa";
-
+import logo from '../../assets/images/logo/logo.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-base-200   mx-auto  px-4 ">
+    <footer className="bg-[#252525] text-white mx-auto px-4">
       <div className="container mx-auto py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-lg font-bold">About Us</h3>
-            <img src="" alt="" />
-            <p className="mt-4">
-              We are a leading provider of high-quality wooden toys, dedicated
-              to promoting creativity and imagination in children.
+          <div className="pr-6">
+            <h3 className="text-lg font-bold text-center">About</h3>
+            <img className="mx-auto mt-4" src={logo} alt="" />
+            <p className="mt-4 text-center">
+              We are a leading provider of high-quality wooden toys, dedicated to promoting creativity and imagination in children.
             </p>
           </div>
           <div>
@@ -35,6 +34,10 @@ const Footer = () => {
               <li>
                 <a href="#">Toy Vehicles</a>
               </li>
+              <li>
+                <a href="#">Dolls</a>
+              </li>
+              {/* Add more options here */}
             </ul>
           </div>
           <div>
@@ -49,33 +52,39 @@ const Footer = () => {
               <li>
                 <a href="#">FAQs</a>
               </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#">Terms &amp; Conditions</a>
+              </li>
+              {/* Add more options here */}
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-bold">Follow Us</h3>
             <ul className="mt-4 flex space-x-4">
-              <ul className="mt-4 flex space-x-4">
-                <li>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <FaFacebook className="h-6 w-6" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <FaInstagram className="h-6 w-6" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <FaTwitter className="h-6 w-6" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <FaPinterest className="h-6 w-6" />
-                  </a>
-                </li>
-              </ul>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <FaFacebook className="h-6 w-6" />
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className="h-6 w-6" />
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <FaTwitter className="h-6 w-6" />
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <FaPinterest className="h-6 w-6" />
+                </a>
+              </li>
+              {/* Add more social media icons here */}
             </ul>
           </div>
         </div>

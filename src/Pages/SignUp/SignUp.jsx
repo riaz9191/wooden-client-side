@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../hook/useTitle";
 
 
 
@@ -10,8 +11,9 @@ const SignUp = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-
-  const from = location.state?.from?.pathname || "/";
+ console.log(location)
+ useTitle('SignUp')
+  const from = location.state?.from || "/";
 
   //   const navigate = useNavigate();
   const [err, setErr] = useState("");
@@ -79,7 +81,7 @@ const SignUp = () => {
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-4 mt-8">Register Now </h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-lg text-center shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-xl text-center shadow-2xl bg-base-100">
             <form onSubmit={handleRegister} className="card-body">
               <div className="flex gap-8">
                 <div className=" form-control">
