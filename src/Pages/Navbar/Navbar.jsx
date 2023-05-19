@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import logo from "../../assets/images/logo/logo.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-//   console.log(user.photoURL);
+  //   console.log(user.photoURL);
   const handleLogOut = () => {
     logOut()
       .then()
@@ -16,35 +16,57 @@ const Navbar = () => {
 
   const navItems = (
     <>
-      <Link to='/'>
-        <li>
-          <a className="text-white">Home</a>
-        </li>
-      </Link>
-      <Link to='/alltoy'>
-        <li>
-          <a className="text-white">All Toy</a>
-        </li>
-      </Link>
-      {user?.email && <Link to='/mytoy'>
-        <li>
-          <a className="text-white">My Toy</a>
-        </li>
-      </Link>}
-      {user?.email && <Link to='/addatoy'>
-        <li>
-          <a className="text-white">Add A Toy</a>
-        </li>
-      </Link>}
-      <Link to='/blog'>
-        <li>
-          <a className="text-white">Blog</a>
-        </li>
-      </Link>
+      {/* <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? "active" : "default")}
+      >
+        Home
+      </NavLink>
+
+      <NavLink
+        to="/applied"
+        className={({ isActive }) => (isActive ? "active" : "default")}
+      >
+        Error
+      </NavLink> */}
+      <NavLink
+        to="/"
+        className={ ({ isActive }) => (isActive ? "active" : "default ") }
+      >
+        Home
+      </NavLink>
+      <NavLink
+        to="/alltoy"
+        className={({ isActive }) => (isActive ? "active" : "default")}
+      >
+        All Toy
+      </NavLink>
+      {user?.email && (
+        <NavLink
+          to="/mytoy"
+          className={({ isActive }) => (isActive ? "active" : "default")}
+        >
+          My Toy
+        </NavLink>
+      )}
+      {user?.email && (
+        <NavLink
+          to="/addatoy"
+          className={({ isActive }) => (isActive ? "active" : "default")}
+        >
+          Add A Toy
+        </NavLink>
+      )}
+      <NavLink
+        to="/blog"
+        className={({ isActive }) => (isActive ? "active" : "default")}
+      >
+        Blog
+      </NavLink>
     </>
   );
   return (
-    <div>
+    <div className="sticky top-0 z-50">
       <div className="navbar bg-[#252525] px-16 py-4">
         <div className="navbar-start">
           <div className="dropdown">
@@ -66,7 +88,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#B27A5A] rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-orange-600 rounded-box w-52"
             >
               {navItems}
             </ul>
@@ -89,13 +111,13 @@ const Navbar = () => {
           )}
           {user?.email ? (
             <Link to="/">
-              <a onClick={handleLogOut} className="btn bg-[#B27A5A] rounded-md">
+              <a onClick={handleLogOut} className="btn bg-orange-600 rounded-md">
                 Logout
               </a>
             </Link>
           ) : (
             <Link to="/login">
-              <a className="btn bg-[#B27A5A] rounded-md">Login</a>
+              <a className="btn bg-orange-600 rounded-md">Login</a>
             </Link>
           )}
         </div>

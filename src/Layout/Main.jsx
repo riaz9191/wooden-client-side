@@ -10,8 +10,8 @@ import { ToastContainer } from 'react-toastify';
 const Main = () => {
     
     return (
-        <div className='max-w-7xl mx-auto bg-base-200'>
-            <Navbar></Navbar>
+        <div className='max-w-7xl mx-auto bg-base-200 sticky top-0'>
+            <Navbar ></Navbar>
             <Outlet></Outlet>
             <ToastContainer />
             <Footer></Footer>

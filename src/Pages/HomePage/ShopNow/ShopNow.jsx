@@ -12,7 +12,7 @@ const ShopNow = () => {
             <h2 className="card-title flex-grow">Handmade Wooden Vase</h2>
             <p>Get 40% Off On Sale</p>
             <div className="card-actions justify">
-              <button className="btn bg-[#B27A5A] border-0 ">Shop Now</button>
+              <button className="btn bg-orange-600 border-0 ">Shop Now</button>
             </div>
           </div>
           <figure className="relative">
@@ -28,7 +28,7 @@ const ShopNow = () => {
             <h2 className="card-title">Wooden Educational Toys</h2>
             <p>Get 25% Off On Sale</p>
             <div className="card-actions ">
-              <button className="btn bg-[#B27A5A] border-0 mt-3">Shop Now</button>
+              <button className="btn bg-orange-600 border-0 mt-3">Shop Now</button>
             </div>
           </div>
           <figure className="relative">
