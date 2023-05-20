@@ -13,7 +13,7 @@ const ShopByCategory = () => {
   //   const id= useParams(id)
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://toy-marketplace-server-side-one.vercel.app/allToys")
       .then((response) => response.json())
       .then((data) => {
         setToys(data);
@@ -76,7 +76,7 @@ const ShopByCategory = () => {
               .map((toy) => (
                 <div
                   className="card card-compact w-96 bg-base-100 shadow-xl"
-                  key={toy.id}
+                  key={toy._id}
                 >
                   <figure>
                     <img src={toy.pictureURL} alt={toy.title} />
@@ -106,7 +106,7 @@ const ShopByCategory = () => {
               .map((toy) => (
                 <div
                   className="card card-compact w-96 bg-base-100 shadow-xl"
-                  key={toy.id}
+                  key={toy._id}
                 >
                   <figure>
                     <img src={toy.pictureURL} alt={toy.title} />
@@ -134,7 +134,7 @@ const ShopByCategory = () => {
               .map((toy) => (
                 <div
                   className="card card-compact w-96 bg-base-100 shadow-xl"
-                  key={toy.id}
+                  key={toy._id}
                 >
                   <figure>
                     <img src={toy.pictureURL} alt={toy.title} />

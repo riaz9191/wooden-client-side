@@ -12,7 +12,7 @@ const AllToy = () => {
   useTitle('AllToy')
 
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://toy-marketplace-server-side-one.vercel.app/allToys")
       .then((response) => response.json())
       .then((data) => {
         setToys(data);
@@ -20,7 +20,7 @@ const AllToy = () => {
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/searchtoy/${searchText}`)
+    fetch(`https://toy-marketplace-server-side-one.vercel.app/searchtoy/${searchText}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.length > 0) {

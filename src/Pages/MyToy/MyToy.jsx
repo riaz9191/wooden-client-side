@@ -20,7 +20,7 @@ const MyToy = () => {
   }, [sort]);
   
 
-  const url = `http://localhost:5000/alltoys?sellerEmail=${user?.email}&sort=${sort}&${new Date().getTime()}`;
+  const url = `https://toy-marketplace-server-side-one.vercel.app/alltoys?sellerEmail=${user?.email}&sort=${sort}&${new Date().getTime()}`;
 
   useEffect(() => {
     console.log(url); // Logging the fetch URL
@@ -48,7 +48,7 @@ const MyToy = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/alltoys/${id}`, {
+        fetch(`https://toy-marketplace-server-side-one.vercel.app/alltoys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

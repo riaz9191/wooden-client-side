@@ -32,7 +32,7 @@ const AddAToy = () => {
       description,
     };
     console.log(postToys);
-    fetch("http://localhost:5000/postToys", {
+    fetch("https://toy-marketplace-server-side-one.vercel.app/postToys", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(postToys),
