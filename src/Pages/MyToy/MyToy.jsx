@@ -20,7 +20,7 @@ const MyToy = () => {
   }, [sort]);
   
 
-  const url = `https://toy-marketplace-server-side-one.vercel.app/alltoys?sellerEmail=${user?.email}&sort=${sort}&${new Date().getTime()}`;
+  const url = `http://localhost:5000/alltoys?sellerEmail=${user?.email}&sort=${sort}&${new Date().getTime()}`;
 
   useEffect(() => {
     console.log(url); // Logging the fetch URL

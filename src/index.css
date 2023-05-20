@@ -5,6 +5,9 @@
 .active {
   @apply font-medium tracking-wide pr-4 font-bold text-orange-300 transition-colors duration-200 ;
 }
+.shopByCata {
+  @apply font-medium tracking-wide pr-4 font-bold text-orange-700 transition-colors duration-200 ;
+}
 
 .default {
   @apply font-medium tracking-wide pr-4 font-normal text-white transition-colors duration-200 hover:text-orange-400;
