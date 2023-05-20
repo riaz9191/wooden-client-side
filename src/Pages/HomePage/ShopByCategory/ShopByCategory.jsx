@@ -4,9 +4,13 @@ import "react-tabs/style/react-tabs.css";
 import { FaStar } from "react-icons/fa";
 import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
-import { toast } from "react-toastify";
+import { toast } from "react-toastify";import "aos/dist/aos.css";
+import AOS from "aos";
 
 const ShopByCategory = () => {
+  useEffect(() => {
+    AOS.init(); // Initialize AOS library
+  }, []);
   const [toys, setToys] = useState([]);
 //   const location = useLocation();
   const navigate = useNavigate();
@@ -51,11 +55,11 @@ const ShopByCategory = () => {
     return starIcons;
   };
   return (
-    <div className="max-w-6xl mx-auto">
+    <div data-aos="zoom-in-up" className="max-w-6xl mx-auto ">
       <h2 className="text-center text-4xl mt-20 mb-14 font-bold">
-        Browse by category
+        Shop by category
       </h2>
-      <Tabs>
+      <Tabs data-aos="fade-down">
         <TabList>
           <Tab>
             <span className="font-bold">Wooden Blocks</span>

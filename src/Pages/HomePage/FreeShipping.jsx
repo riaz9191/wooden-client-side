@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo1 from "../../assets/images/logo/fd.png";
 import logo2 from "../../assets/images/logo/bag.png";
 import logo3 from "../../assets/images/logo/gfpng.png";
 import logo4 from "../../assets/images/logo//Screenshot 2023-05-18 125633 (1).png";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const FreeShipping = () => {
+  useEffect(() => {
+    AOS.init(); // Initialize AOS library
+  }, []);
   return (
-    <div>
-      <div className="pl-10 pr-10 mx-auto grid md:grid-cols-4 gap-6 mt-6 mb-6">
+    <div >
+      <div data-aos="zoom-in-up" className="pl-10 pr-10 mx-auto grid md:grid-cols-4 gap-6 mt-6 mb-6">
         <div className=" rounded-none  card flex items-center gap-4 flex-row bg-base-100 shadow-xl pl-2 pr-6 pt-3 pb-3">
           <div className="logo">
             <img src={logo1} className="h-14 w-18 transform transition-transform duration-500 hover:rotate-180" alt="" />

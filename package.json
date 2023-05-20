@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
+    "aos": "^2.3.4",
     "daisy": "^0.2.0",
     "daisyui": "^2.51.6",
     "firebase": "^9.22.0",

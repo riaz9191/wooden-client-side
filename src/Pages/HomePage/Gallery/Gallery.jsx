@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Gallery.css";
 import img1 from "../../../assets/images/gallery/main-banner-2.jpg";
 import img2 from "../../../assets/images/gallery/Car_3of4_3bae9ac0-ef1e-48ad-8337-cbccbccc0adf_1024x1024.jpg";
 import img3 from "../../../assets/images/gallery/p_36_826_1.jpg";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const Gallery = () => {
+  useEffect(() => {
+    AOS.init(); // Initialize AOS library
+  }, []);
   const galleryItems = [
     { id: 1, image: img1, name: "Toy Set" },
     { id: 2, image: img2, name: "Car" },
@@ -14,9 +19,9 @@ const Gallery = () => {
 
   return (
     <div>
-      <section className="gallery ">
+      <section data-aos="zoom-in-up" className="gallery mt-16">
         <h2 className="text-center font-bold text-3xl mb-3">Gallery Items</h2>
-        <div className="gallery-grid ">
+        <div data-aos="fade-down" className="gallery-grid  mt-14">
           {galleryItems.map((item) => (
             <div key={item.id} className="gallery-item shadow-xl">
               <div className="image-container shadow-xl">
