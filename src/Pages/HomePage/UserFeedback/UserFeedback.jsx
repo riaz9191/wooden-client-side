@@ -35,7 +35,7 @@ const UserFeedback = () => {
 
   return (
     <div data-aos="zoom-in-up" className="mb-20">
-      <h2 className="text-4xl text-center font-bold mt-20 mb-16">What Our Clients Say</h2>
+      <h2 className="text-4xl text-center font-bold sm: mt-10 lg:mt-20 mb-16">What Our Clients Say</h2>
       <Carousel
         responsive={{
           desktop: {

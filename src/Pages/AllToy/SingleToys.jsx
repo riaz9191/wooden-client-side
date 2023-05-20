@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import Spinner from "../../Spinner/Spinner";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const SingleToys = ({ toy,index }) => {
+  const {loading} = useContext(AuthContext)
   const {
     _id,
     pictureURL,
@@ -15,7 +18,11 @@ const SingleToys = ({ toy,index }) => {
     description,
     
   } = toy;
-
+  if (loading) {
+    return (
+      <Spinner className="text-center" animation="border" variant="primary" />
+    );
+  }
   return (
     <tr>
       <td>

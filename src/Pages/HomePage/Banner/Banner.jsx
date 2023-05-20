@@ -5,104 +5,38 @@ import img2 from "../../../assets/images/banner/main-banner-2.png";
 const Banner = () => {
   return (
     <div>
-      <div className="carousel w-full">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img src={img2} className="w-full" />
-          
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <div className="w-full">
-              <h2 className="text-[#252525]  text-xl ps-28">
-                MORE LUXURY & TRENDING
-              </h2>
-              <h2 className="text-[#252525] font-bold text-4xl ps-28 mt-3">
-                Wooden Crafts <br /> And Arts Toys For Kids
-              </h2>
-              <button className="btn ms-28 mt-8 bg-[#AC7D56] border-0">SHOP NOW</button>
-            </div>
-          </div>
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-square btn-sm bg-[#AC7D56] border-0">
-              ❮
-            </a>
-            <a href="#slide2" className="btn btn-square btn-sm bg-[#AC7D56] border-0">
-              ❯
-            </a>
-          </div>
-        </div>
+      <section className="relative bg-[url(https://i.ibb.co/GT3vV7R/main-banner-2.png)] bg-cover bg-center bg-no-repeat">
+        <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l "></div>
 
-        <div id="slide2" className="carousel-item relative w-full">
-          <img src={img1} className="w-full" />
-          
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <div className="w-full">
-              <h2 className="text-[#252525]  text-xl ps-28">
-                MORE LUXURY & TRENDING
-              </h2>
-              <h2 className="text-[#252525] font-bold text-4xl ps-28 mt-3">
-                Wooden Crafts <br /> And Arts Toys For Kids
-              </h2>
-              <button className="btn ms-28 mt-8 bg-[#AC7D56] border-0">SHOP NOW</button>
+        <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+          <div className="max-w-xl lg:pl-10 text- ltr:sm:text-left rtl:sm:text-right">
+            <h1 className="text-xl font-normal sm:text-xl text-[#252525]">
+              MORE LUXURY & TRENDING
+              <strong className="block font-extrabold text-4xl text-[#252525]">
+              Wooden Crafts <br /> And Arts Toys For Kids
+              </strong>
+            </h1>
+
+
+            <div className="mt-8 flex flex-wrap gap-4 text-center">
+              <a
+                href="#"
+                className="block w-full shadow-xl rounded bg-gradient-to-r from-[#c48755] to-[#79573a] 
+                hover:from-[#90633e] hover:to-[#483423]  px-12 py-3 text-sm font-medium text-white shadow  focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+              >
+                Get Started
+              </a>
+
+              <a
+                href="#"
+                className="block w-full shadow-xl rounded bg-white px-12 py-3 text-sm font-medium text-rose-600  hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
+              >
+                Learn More
+              </a>
             </div>
           </div>
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            
-            <a href="#slide1" className="btn btn-square btn-sm bg-[#AC7D56] border-0">
-              ❮
-            </a>
-            <a href="#slide3" className="btn btn-square btn-sm bg-[#AC7D56] border-0">
-              ❯
-            </a>
-          </div>
         </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <img src={img2} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            
-          <div className="w-full">
-              <h2 className="text-[#252525]  text-xl ps-28">
-                MORE LUXURY & TRENDING
-              </h2>
-              <h2 className="text-[#252525] font-bold text-4xl ps-28 mt-3">
-                Wooden Crafts <br /> And Arts Toys For Kids
-              </h2>
-              <button className="btn ms-28 mt-8 bg-[#AC7D56] border-0">SHOP NOW</button>
-            </div>
-          </div>
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            
-            <a href="#slide2" className="btn btn-square btn-sm bg-[#AC7D56] border-0">
-              ❮
-            </a>
-            <a href="#slide4" className="btn btn-square btn-sm bg-[#AC7D56] border-0">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide4" className="carousel-item relative w-full">
-          <img src={img1} className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            
-          <div className="w-full">
-              <h2 className="text-[#252525]  text-xl ps-28">
-                MORE LUXURY & TRENDING
-              </h2>
-              <h2 className="text-[#252525] font-bold text-4xl ps-28 mt-3">
-                Wooden Crafts <br /> And Arts Toys For Kids
-              </h2>
-              <button className="btn ms-28 mt-8 bg-[#AC7D56] border-0">SHOP NOW</button>
-            </div>
-          </div>
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            
-            <a href="#slide3" className="btn btn-square btn-sm bg-[#AC7D56] border-0">
-              ❮
-            </a>
-            <a href="#slide1" className="btn btn-square btn-sm bg-[#AC7D56] border-0">
-              ❯
-            </a>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   );
 };

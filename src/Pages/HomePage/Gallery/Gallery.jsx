@@ -21,11 +21,11 @@ const Gallery = () => {
     <div>
       <section data-aos="zoom-in-up" className="gallery mt-16">
         <h2 className="text-center font-bold text-3xl mb-3">Gallery Items</h2>
-        <div data-aos="fade-down" className="gallery-grid  mt-14">
+        <div data-aos="fade-down" className="gallery-grid grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-14">
           {galleryItems.map((item) => (
-            <div key={item.id} className="gallery-item shadow-xl">
+            <div key={item.id} className="gallery-item shadow-xl h-48 sm:h-64">
               <div className="image-container shadow-xl">
-                <img src={item.image} alt={item.name} className="gallery-image shadow-xl" />
+                <img src={item.image} alt={item.name} className="gallery-image shadow-xl object-cover w-full h-full" />
                 <div className="overlay">
                   <div className="overlay-content">
                     <h3 className="toy-name">{item.name}</h3>

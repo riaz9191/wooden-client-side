@@ -11,7 +11,7 @@ const MyToy = () => {
   
   const { user,loading } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
-  const [sort, setSort] = useState("asc");
+  const [sort, setSort] = useState("");
   useTitle('MyToy')
   
 
@@ -68,7 +68,8 @@ const MyToy = () => {
   return (
     <div className="mt-5 mb-32">
       {toys.length > 0 ? (
-        <div className="overflow-x-auto w-full max-w-6xl mx-auto">
+        <div className="overflow-x-auto w-full max-w-7xl mx-auto">
+            <h2 className="text-center text-4xl font-bold">My Toys: {toys.length}</h2>
           <div className="flex justify-end mb-2">
             <div className="mr-4">
               <label htmlFor="sort" className="text-gray-600 font-bold">
@@ -81,6 +82,7 @@ const MyToy = () => {
                 className="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:border-blue-500"
                 onChange={(e) => setSort(e.target.value)}
               >
+                <option value="">Select</option>
                 <option value="asc">Ascending</option>
                 <option value="desc">Descending</option>
               </select>
